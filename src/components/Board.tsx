@@ -1,5 +1,3 @@
-// src/components/Board.tsx
-
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Board as BoardType, Cell as CellType } from '../utils/minesweeper';
@@ -32,11 +30,13 @@ const Board: React.FC<BoardProps> = ({ board, onCellPress, onCellLongPress }) =>
 
 const styles = StyleSheet.create({
   board: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row', // Sắp xếp các dòng theo chiều ngang
+    flexWrap: 'wrap', // Cho phép các dòng được quấn xuống nếu không thể hiển thị hết trên một dòng
+    justifyContent: 'center', // Canh giữa các dòng
+    alignItems: 'center', // Canh giữa các ô trong mỗi dòng
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: 'row', // Sắp xếp các ô theo chiều ngang
   },
 });
 
